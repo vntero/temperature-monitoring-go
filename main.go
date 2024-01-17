@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
-	"strconv"
+	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	name, age, likesGo := "Hugo", 32, true
+	godotenv.Load()
 
-	fmt.Println("My name is " + name + " and I am " + strconv.Itoa(age) + " years old." + " Do I love Go? " + strconv.FormatBool(likesGo))
+	OpenWeatherApiKey := os.Getenv("API_KEY")
+
+	fmt.Println("Api key", OpenWeatherApiKey)
 }
