@@ -12,8 +12,10 @@ func main() {
 	godotenv.Load()
 
 	// grabs the value of a specific env variable
-	OpenWeatherApiKey := os.Getenv("API_KEY")
+	openWeatherApiKey := os.Getenv("API_KEY")
 
 	// prints it to the console
-	fmt.Println("Api key", OpenWeatherApiKey)
+	fmt.Println("Api key", openWeatherApiKey)
+
+	var apiUrl string = "https://api.openweathermap.org"
 }
