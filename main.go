@@ -1,7 +1,7 @@
 package main
 
-import "temperature-monitoring-go/pkg/publisher"
+import "temperature-monitoring-go/pkg/caller"
 
 func main() {
-	publisher.GetWeatherData("Lisbon")
+	caller.GetWeatherData("Lisbon")
 }

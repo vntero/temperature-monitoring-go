@@ -15,7 +15,7 @@ import (
 /*
  * Makes a call to WeatherApi
  */
-func GetWeatherData(city string) {
+func PublishToBroker() {
 	// load env variables to this file
 	godotenv.Load()
 
