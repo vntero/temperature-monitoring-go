@@ -26,7 +26,7 @@ func GetWeatherData(city string) {
 		return
 	}
 
-	fmt.Println("🚀", apiUrl)
+	fmt.Println("🚀 - api url without query params", apiUrl)
 
 	// add query params to the API URL
 	q := apiUrl.Query()
@@ -35,6 +35,8 @@ func GetWeatherData(city string) {
 
 	// ssign the modified query parameters back to apiUrl
 	apiUrl.RawQuery = q.Encode()
+
+	fmt.Println("🚀 - full url with which the request is made", apiUrl)
 
 	// make a get request to the api
 	response, err := http.Get(apiUrl.String())
