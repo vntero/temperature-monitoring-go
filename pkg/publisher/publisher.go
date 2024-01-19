@@ -52,5 +52,5 @@ func GetWeatherData(city string) {
 		return
 	}
 
-	fmt.Println("🚀 - full url with which the request is made", response.Body)
+	fmt.Println("🚀 - prints the reponse body", response.Body)
 }
