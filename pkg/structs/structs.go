@@ -16,7 +16,7 @@ type Location struct {
 type Condition struct {
 	Text string `json:"text"`
 	Icon string `json:"icon"`
-	Code string `json:"code"`
+	Code float64 `json:"code"`
 }
 
 type Current struct {

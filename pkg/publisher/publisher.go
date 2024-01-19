@@ -71,7 +71,7 @@ func GetWeatherData(city string) {
 	date := weatherData.Location.Localtime
 	
 	// print the final result
-	fmt.Println(cityName)
-	fmt.Println(temperature)
-	fmt.Println(date)
+	fmt.Println("🚀", cityName)
+	fmt.Println("🚀", temperature)
+	fmt.Println("🚀", date)
 }
