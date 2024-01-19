@@ -58,6 +58,20 @@ func GetWeatherData(city string) {
 	fmt.Println("🚀 - prints the reponse body", response.Body)
 
 	// parse the JSON response into the WeatherData struct
-	var weatherData structs.Current
+	var weatherData structs.WeatherData
 	err = json.NewDecoder(response.Body).Decode(&weatherData)
+	if err != nil {
+		fmt.Println("Error decoding JSON response:", err)
+		return
+	}
+
+	// unfold response into the values we want
+	cityName := weatherData.Location.Name
+	temperature := weatherData.Current.TempC
+	date := weatherData.Location.Localtime
+	
+	// print the final result
+	fmt.Println(cityName)
+	fmt.Println(temperature)
+	fmt.Println(date)
 }
