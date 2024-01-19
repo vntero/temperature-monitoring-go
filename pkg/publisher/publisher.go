@@ -51,4 +51,6 @@ func GetWeatherData(city string) {
 		fmt.Println("Error: Non-OK status code received -", response.Status)
 		return
 	}
+
+	fmt.Println("🚀 - full url with which the request is made", response.Body)
 }
