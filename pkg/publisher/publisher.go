@@ -55,8 +55,6 @@ func GetWeatherData(city string) {
 		return
 	}
 
-	fmt.Println("🚀 - prints the reponse body", response.Body)
-
 	// parse the JSON response into the WeatherData struct
 	var weatherData structs.WeatherData
 	err = json.NewDecoder(response.Body).Decode(&weatherData)
