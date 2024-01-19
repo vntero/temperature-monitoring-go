@@ -1,4 +1,4 @@
-module foo/bar
+module temperature-monitoring-go
 
 go 1.21.1
 

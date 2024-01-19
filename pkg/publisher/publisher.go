@@ -9,19 +9,32 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func getWeatherData() {
+/*
+ * Makes a call to WeatherApi
+ */
+func GetWeatherData(city string) {
+	// load env variables to this file
 	godotenv.Load()
 
+	// assign api key to the const
 	apiKey := os.Getenv("API_KEY")
 
+	// assign api url
 	apiUrl, err := url.Parse("http://api.weatherapi.com/v1/current.json")
 	if err != nil {
 		fmt.Println("Error parsing API URL", err)
 		return
 	}
 
-	apiUrl.Query().Add("key", apiKey)
-	apiUrl.Query().Add("q", "Lisbon")
+	fmt.Println("🚀", apiUrl)
+
+	// add query params to the API URL
+	q := apiUrl.Query()
+	q.Add("key", apiKey)
+	q.Add("q", city)
+
+	// ssign the modified query parameters back to apiUrl
+	apiUrl.RawQuery = q.Encode()
 
 	// make a get request to the api
 	response, err := http.Get(apiUrl.String())

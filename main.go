@@ -1,12 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"temperature-monitoring-go/pkg/publisher"
 )
 
 func main() {
-
-	fmt.Println("Api key")
-
-	
+	publisher.GetWeatherData("Lisbon")
 }
