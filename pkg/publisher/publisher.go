@@ -1,12 +1,15 @@
 package publisher
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/url"
 	"os"
 
 	"github.com/joho/godotenv"
+
+	"temperature-monitoring-go/pkg/structs"
 )
 
 /*
@@ -53,4 +56,8 @@ func GetWeatherData(city string) {
 	}
 
 	fmt.Println("🚀 - prints the reponse body", response.Body)
+
+	// parse the JSON response into the WeatherData struct
+	var weatherData structs.Current
+	err = json.NewDecoder(response.Body).Decode(&weatherData)
 }
